@@ -17,7 +17,7 @@ EMBEDDINGS_PATH = 'embeddings/embeddings.npy' # поиск должен прои
 IMAGE_PATHS_PATH = 'image_paths/image_paths.pkl' # поиск должен производиться по тестовой выборке датасета (имитирующего библиотеку)
 
 print("Loading feature extractor model...")
-feature_extractor = load_model(MODEL_PATH)
+feature_extractor = load_model(MODEL_PATH, compile=False)
 
 print("Loading embeddings and image paths...")
 features_array = np.load(EMBEDDINGS_PATH)
@@ -54,6 +54,7 @@ def find_similar_images(input_img_path, top_n=5):
 
     # Take top N
     top_matches = filtered_matches[:top_n]
+    print("top_matches", top_matches)
     result_dict  = OrderedDict(top_matches)
     return result_dict
 

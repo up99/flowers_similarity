@@ -1,0 +1,9 @@
+Keras>=2.10
+tensorflow>=2.10
+numpy>=1.23
+matplotlib>=3.5
+scikit-learn>=1.2
+flask>=2.2
+gunicorn>=20.1
+Pillow>=9.0
+h5py>=3.6.0
